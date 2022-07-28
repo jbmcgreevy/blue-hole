@@ -2,13 +2,13 @@
 <div mat-dialog-content>
     <mat-form-field appearance="fill">
         <mat-label>Username</mat-label>
-        <input matInput placeholder="Username" [formControl]="username" required>
-    </mat-form-field>
-    <mat-form-field appearance="fill">
+        <input matInput id="username" #username>
+      </mat-form-field>
+      <mat-form-field appearance="fill">
         <mat-label>Password</mat-label>
-        <input matInput placeholder="Password" [formControl]="password" required>
-    </mat-form-field>
+        <input type="password" matInput id="password" #password>
+      </mat-form-field>
 </div>
 <div mat-dialog-actions>
-  <button mat-raised-button (click)="onLogin()" color="primary">Submit</button>
+  <button mat-raised-button (click)="onLogin(username.value, password.value)" color="primary">Submit</button>
 </div>

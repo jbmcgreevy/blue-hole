@@ -9,19 +9,19 @@ import { FormControl, Validators, ReactiveFormsModule } from '@angular/forms';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
+  constructor(private router: Router, public dialogRef: MatDialogRef<LoginComponent>) { }
 
-  username = new FormControl('', [Validators.required]);
-  password = new FormControl('', [Validators.required]);
-
-  constructor(private router: Router) { }
-
-  onLogin(): void {
-    console.log(this.username.value);
-
-    if (this.username.value == 'mother' && this.password.value == 'thomas') {
+  onLogin(username: string, password: string): void {
+    console.log(username);
+    if (username == 'mother' && password == 'thomas') {
+      this.dialogRef.close();
       this.router.navigate(['dashboard']);
-      }
     }
+    else {
+      console.log("bad input");
+    }
+  }
+
 
   ngOnInit(): void {
   }
