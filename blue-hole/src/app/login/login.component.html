@@ -1,0 +1,14 @@
+<h1 mat-dialog-title>Log In</h1>
+<div mat-dialog-content>
+    <mat-form-field appearance="fill">
+        <mat-label>Username</mat-label>
+        <input matInput placeholder="Username" [formControl]="username" required>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+        <mat-label>Password</mat-label>
+        <input matInput placeholder="Password" [formControl]="password" required>
+    </mat-form-field>
+</div>
+<div mat-dialog-actions>
+  <button mat-raised-button (click)="onLogin()" color="primary">Submit</button>
+</div>
